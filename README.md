@@ -1,28 +1,61 @@
 # Haven Budget — Household Budget Management System
 
-A responsive household budget web application built with HTML, CSS, JavaScript, and browser LocalStorage.
+A clean, responsive React household finance app for recording income and expenses, setting a monthly budget, and viewing summaries.
 
 ## Features
-- Sign up, log in, and log out
-- Each browser account has its own budget and expense records
-- Set or update a monthly budget for the current month
-- Add expenses with description, amount, category, and date
-- Automatically calculate monthly spending and remaining balance
-- View transaction history and delete expense records
-- View spending totals by category
-- Responsive layout for desktop and mobile
+- React + Vite application
+- Responsive dashboard and separate Overview, Transactions, Budgets, Reports, and Settings pages
+- Add, edit, delete, search, and filter transactions
+- Income and expense calculations in Philippine pesos (PHP)
+- Monthly budget tracking and expense category breakdown
+- CSV export
+- Browser localStorage persistence
+- Installable Progressive Web App (PWA) foundation
+- Sign-up and sign-in form with password strength checks
 
-## Run the project
-1. Open the `Household Budget Management System` folder in Visual Studio Code.
-2. Install the **Live Server** extension (Ritwick Dey), if needed.
-3. Right-click `index.html` and select **Open with Live Server**.
-4. Create an account on the sign-up screen and start setting your monthly budget.
+## Requirements
+- Node.js LTS (includes npm)
+- Visual Studio Code
+- Git and Git Bash (for GitHub commits)
 
-## Important storage and security note
-This is a front-end academic demonstration. User accounts and budget data are stored in the browser's LocalStorage. They do not sync between devices or browsers. Clearing browser site data can erase them. The client-side login is not secure production authentication; a real public service should use a backend, database, HTTPS, server-side password hashing, and proper session management. Do not use a real or reused password.
+
+## Website name and URL
+- Website name: **Haven Budget**
+- Local development URL: **http://localhost:5173/**
+- This is a local development address. To get a public URL, deploy the project to a hosting service such as Vercel or Netlify and connect your GitHub repository.
+
+## Install as a phone app
+The project includes a web app manifest and service worker. For a production PWA, deploy it over HTTPS, then open the deployed website in a supported browser and choose **Install app** or **Add to Home screen**. Play Store publication is a separate process: package the PWA (for example, with a Trusted Web Activity), prepare store assets, create a Play Console developer account, and satisfy current Google Play policies.
+
+## Important security and data note
+This is a school-project prototype. Authentication is client-side and demo passwords are stored in browser localStorage. It is **not safe for real financial or personal data** and does not provide server-side authentication, password hashing, database backups, or multi-device sync. A production release needs a secure backend, HTTPS, password hashing (such as Argon2id or bcrypt), server-side validation, authorization, and privacy/security testing. Do not reuse a real password here.
 
 ## Project structure
-- `index.html` — page structure and sign-in/sign-up screens
-- `css/style.css` — responsive visual design
-- `js/app.js` — account demo, monthly budget, expense records, and calculations
-- `docs/` — project notes
+```text
+Household-Budget-Management-System/
+├── public/
+│   ├── icon.svg
+│   ├── manifest.webmanifest
+│   └── sw.js
+├── src/
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── styles.css
+├── index.html
+├── package.json
+├── vite.config.js
+└── README.md
+```
+
+## Testing checklist
+- [ ] Sign up using a test email and a strong test password.
+- [ ] Log out and log in again.
+- [ ] Add one income transaction and one expense transaction.
+- [ ] Confirm the dashboard totals update.
+- [ ] Edit and delete a transaction.
+- [ ] Search and filter transaction records.
+- [ ] Change the monthly budget and verify the remaining amount.
+- [ ] Export transactions to CSV.
+- [ ] Refresh the page and confirm demo data remains in the same browser.
+- [ ] Test mobile layout using browser developer tools.
+
